@@ -1,0 +1,39 @@
+<br>
+<br>
+<br>
+<br>
+
+<input [(ngModel)]="name">
+<button (click)="resetName()">Reset</button>
+<button (click)="addUser()">Ajouter</button>
+
+
+<!--vieille syntaxe dépréciée-->
+<!--<h1 *ngIf="name">Hello {{ name }}</h1>-->
+
+<!--syntaxe depuis version > 17 -->
+@if (name) {
+  <h1>Hello {{ name }}</h1>
+}
+
+@if (users.length > 0) {
+  <ul>
+    @for (user of users; track $index) {
+      <li (click)="removeUser($index)"
+          [ngClass]="{ 'blue' : user.length > 5, 'yellow' :  user.includes('e')}">{{ user }}  / {{ $index }}
+      </li>
+    }
+  </ul>
+}
+
+<p>{{date | date : 'dd/MM/yyyy'}}</p>
+<p>{{date | date : 'long' : undefined : 'fr_FR'}}</p>
+
+
+
+
+
+
+
+
+
