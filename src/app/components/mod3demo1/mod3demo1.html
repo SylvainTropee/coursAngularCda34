@@ -1,0 +1,7 @@
+<!-- property binding                                 interpolation-->
+<h1 [class]="name == 'Raymond' ? 'green' : 'red'">Bienvenue {{ name }}</h1>
+<!--two-way binding-->
+<input [(ngModel)]="name">
+<!--event binding-->
+<button (click)="resetName()">Reset</button>
+
