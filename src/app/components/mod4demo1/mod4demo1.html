@@ -1,0 +1,7 @@
+<h1>Hello !</h1>
+@if (user && user()?.name) {
+  <h2>{{ user()?.name }} est connecté </h2>
+}
+
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
