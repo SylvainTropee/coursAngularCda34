@@ -8,10 +8,16 @@ export class Mod4demo1Service {
   // user: { name: string } | undefined
   readonly user = signal<{name : string} | null>(null)
 
+  public getUser(){
+    return false
+  }
+
   public login() {
     this.user.set({name: "Sylvain"})
     localStorage.setItem("user", JSON.stringify({name: "Sylvain"}))
   }
+
+
 
   public logout() {
     localStorage.removeItem("user")
