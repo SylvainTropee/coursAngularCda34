@@ -52,3 +52,13 @@
 
   <button type="submit">Envoyer !</button>
 </form>
+
+
+<!--template drive form -->
+<form>
+  <label for="firstname">Prénom</label>
+  <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" (input)="check($event)">
+  <button (click)="onSubmit2()"></button>
+</form>
+
+
