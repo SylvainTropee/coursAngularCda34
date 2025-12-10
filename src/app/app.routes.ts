@@ -8,6 +8,6 @@ export const routes: Routes = [
   {path: "home", component: Home},
   {path: "about-us", component: About},
   {path: "detail/:id", component : Detail, canActivate : [authGuard]},
-  {path: "test", component: About, outlet: "test"},
+  {path: "test", component: About, outlet: "secondary"},
   {path: "**", component: Home},
 ];

@@ -1,0 +1,54 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" formControlName="email">
+  @if (form.get('email')?.touched || form.get('email')?.dirty) {
+    @if (form.get('email')?.hasError('email')) {
+      <p class="error">Le texte saisi n'est pas un email valide</p>
+    }
+    <!--  touched -> activer si perte de focus, dirty si valeur change-->
+    @if (form.get('email')?.hasError('required')) {
+      <p class="error">Le champ est obligatoire</p>
+    }
+  }
+
+  <label for="password">Mot de passe</label>
+  <input id="password" name="password" type="password" formControlName="password">
+  @if (form.get('password')?.touched || form.get('password')?.dirty) {
+    @if (form.get('password')?.hasError('pattern')) {
+      <p class="error">ça doit être compliqué</p>
+    }
+    <!--  touched -> activer si perte de focus, dirty si valeur change-->
+    @if (form.get('password')?.hasError('required')) {
+      <p class="error">Le champ est obligatoire</p>
+    }
+  }
+
+  <label for="birthdate">Date de naissance</label>
+  <input id="birthdate" name="birthdate" type="date" formControlName="birthdate">
+  @if (form.get('birthdate')?.touched || form.get('birthdate')?.dirty) {
+
+    @if (form.get('birthdate')?.hasError('dateGreaterThan')) {
+      <p class="error">La date ne peut être supérieure à la date du jour !</p>
+    }
+    <!--  touched -> activer si perte de focus, dirty si valeur change-->
+    @if (form.get('birthdate')?.hasError('required')) {
+      <p class="error">Le champ est obligatoire</p>
+    }
+  }
+
+  <label for="newsLetter">
+    <input id="newsLetter" name="newsLetter" type="checkbox" formControlName="newsLetter">
+    S'abonner à la news letter ?
+  </label>
+
+  <label for="job">Métier </label>
+  <select name="job" id="job" formControlName="job">
+    <option value="dev">Développeur</option>
+    <option value="admin">Administrateur</option>
+  </select>
+
+  <label for="note">Note</label>
+  <input type="range" id="note" name="note" min="1" max="10" step="1" formControlName="note">
+
+  <button type="submit">Envoyer !</button>
+</form>
