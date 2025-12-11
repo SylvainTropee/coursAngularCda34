@@ -23,7 +23,7 @@ export class Mod7service {
   }
 
   getJoke3() {
-    return this.http.get<Joke>(this.BASE_URL).pipe(
+    return this.http.get<any>(this.BASE_URL).pipe(
       map(response => {
           return {
             id: response.id,
