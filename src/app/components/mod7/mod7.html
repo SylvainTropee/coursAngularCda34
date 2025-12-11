@@ -1,0 +1,19 @@
+<h2>Jokes de Chucky !</h2>
+
+<p>Test joke 1 : {{ joke  | json }}</p>
+
+<p>Test joke 2 : {{ joke$ | async | json }}</p>
+
+
+@if (joke2) {
+  <p>
+    <img src="{{joke2.icon_url}}" alt="">
+    Test joke 3 : {{ joke2.value }}</p>
+}
+
+@if (joke3) {
+  <p>
+    <img src="{{joke3.iconUrl}}" alt="">
+    Test joke 4 : {{ joke3.value }}</p>
+}
+
